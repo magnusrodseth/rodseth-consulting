@@ -29,9 +29,7 @@ const Hero = () => {
             Rødseth Consulting
           </h1>
           <p className="mt-6 text-lg leading-8 text-gray-300">
-            Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
-            lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
-            fugiat aliqua.
+            Innovative løsninger for fremtiden.
           </p>
 
           <div className="flex items-center gap-x-8">
