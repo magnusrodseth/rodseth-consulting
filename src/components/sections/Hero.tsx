@@ -1,6 +1,9 @@
 import Logo from "../Logo";
-import { ArrowRightIcon } from "@heroicons/react/20/solid";
 import GridBackground from "../common/GridBackground";
+import { cn } from "../../lib/utils";
+import { ArrowRightIcon } from "lucide-react";
+import { DominoSpinner } from "react-spinners-kit";
+import { green } from "tailwindcss/colors";
 
 const Hero = () => {
   return (
@@ -19,9 +22,9 @@ const Hero = () => {
           }}
         />
       </div>
+
       <div className="mx-auto max-w-7xl px-6 pb-24 pt-16 sm:pb-40 lg:flex lg:px-8 lg:pt-40">
         <div className="mx-auto max-w-2xl flex-shrink-0 lg:mx-0 lg:max-w-xl lg:pt-32">
-          <Logo className="text-indigo-500" />
           <h1 className="mt-10 text-4xl font-bold tracking-tight text-white sm:text-6xl">
             Rødseth Consulting
           </h1>
@@ -30,27 +33,36 @@ const Hero = () => {
             lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
             fugiat aliqua.
           </p>
-          <div className="mt-10 flex items-center gap-x-6">
-            <a
-              href="#contact"
-              className="text-sm font-semibold leading-6 text-white flex justify-center items-center space-x-2 group hover:cursor-pointer"
-            >
-              <span>Ta kontakt</span>
-              <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-150" />
-            </a>
+
+          <div className="flex items-center gap-x-8">
+            <div className="mt-10 flex items-center">
+              <a
+                href="#expertise"
+                className="flex rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              >
+                <span>Ekspertise og tjenester</span>
+              </a>
+            </div>
+            <div className="mt-10 flex items-center gap-x-6">
+              <a
+                href="#contact"
+                className={cn(
+                  "text-sm font-semibold leading-6 text-white flex justify-center items-center space-x-2",
+                  "group hover:cursor-pointer"
+                )}
+              >
+                <span>Ta kontakt</span>
+                <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-150" />
+              </a>
+            </div>
           </div>
         </div>
+
         {/* <div className="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32">
-              <div className="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
-                <img
-                  src="https://illustrations.popsy.co/purple/product-launch.svg"
-                  alt="App screenshot"
-                  width={2432}
-                  height={1442}
-                  className="w-[76rem] rounded-md bg-white/5 shadow-2xl ring-1 ring-white/10"
-                />
-              </div>
-            </div> */}
+          <div className="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
+                Some hero content goes here
+          </div>
+        </div> */}
       </div>
     </div>
   );

@@ -1,42 +1,44 @@
+import type { CollectionEntry } from "astro:content";
 import {
-  CloudArrowUpIcon,
-  LockClosedIcon,
-  ArrowPathIcon,
-  FingerPrintIcon,
-  Cog6ToothIcon,
+  ArrowDownIcon,
+  ChevronRightIcon,
+  CloudyIcon,
+  CogIcon,
+  FingerprintIcon,
+  LockIcon,
   ServerIcon,
-} from "@heroicons/react/20/solid";
+} from "lucide-react";
 
 const secondaryFeatures = [
   {
     name: "Push to deploy.",
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit aute id magna.",
-    icon: CloudArrowUpIcon,
+    icon: CloudyIcon,
   },
   {
     name: "SSL certificates.",
     description:
       "Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.",
-    icon: LockClosedIcon,
+    icon: LockIcon,
   },
   {
     name: "Simple queues.",
     description:
       "Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus.",
-    icon: ArrowPathIcon,
+    icon: ArrowDownIcon,
   },
   {
     name: "Advanced security.",
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit aute id magna.",
-    icon: FingerPrintIcon,
+    icon: FingerprintIcon,
   },
   {
     name: "Powerful API.",
     description:
       "Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.",
-    icon: Cog6ToothIcon,
+    icon: CogIcon,
   },
   {
     name: "Database backups.",
@@ -46,50 +48,43 @@ const secondaryFeatures = [
   },
 ];
 
-const SecondaryFeatures = () => {
+type PortfolioProps = {
+  portfolio: CollectionEntry<"portfolio">[];
+};
+
+const Portfolio = ({ portfolio }: PortfolioProps) => {
   return (
     <div className="mt-32 sm:mt-56">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl sm:text-center">
-          <h2 className="text-base font-semibold leading-7 text-indigo-400">
-            Everything you need
+          <h2 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+            Portefølje
           </h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            No server? No problem.
-          </p>
-          <p className="mt-6 text-lg leading-8 text-gray-300">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores
-            impedit perferendis suscipit eaque, iste dolor cupiditate
-            blanditiis.
-          </p>
-        </div>
-      </div>
-      <div className="relative overflow-hidden pt-16">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <img
-            src="https://tailwindui.com/img/component-images/dark-project-app-screenshot.png"
-            alt="App screenshot"
-            className="mb-[-12%] rounded-xl shadow-2xl ring-1 ring-white/10"
-            width={2432}
-            height={1442}
-          />
-          <div className="relative" aria-hidden="true">
-            <div className="absolute -inset-x-20 bottom-0 bg-gradient-to-t from-gray-900 pt-[7%]" />
-          </div>
         </div>
       </div>
       <div className="mx-auto mt-16 max-w-7xl px-6 sm:mt-20 md:mt-24 lg:px-8">
         <dl className="mx-auto grid max-w-2xl grid-cols-1 gap-x-6 gap-y-10 text-base leading-7 text-gray-300 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-x-8 lg:gap-y-16">
-          {secondaryFeatures.map((feature) => (
-            <div key={feature.name} className="relative pl-9">
+          {portfolio.map(({ data }) => (
+            <div key={data.title} className="relative pl-9">
               <dt className="inline font-semibold text-white">
-                <feature.icon
+                <ChevronRightIcon
                   className="absolute left-1 top-1 h-5 w-5 text-indigo-500"
                   aria-hidden="true"
                 />
-                {feature.name}
+                {data.title}.
               </dt>{" "}
-              <dd className="inline">{feature.description}</dd>
+              <dd className="inline">
+                {data.description}{" "}
+                {data.link && (
+                  <a
+                    href={data.link}
+                    target="_blank"
+                    className="text-indigo-400 hover:text-indigo-300 transition-colors duration-150"
+                  >
+                    Se mer.
+                  </a>
+                )}
+              </dd>
             </div>
           ))}
         </dl>
@@ -98,4 +93,4 @@ const SecondaryFeatures = () => {
   );
 };
 
-export default SecondaryFeatures;
+export default Portfolio;
