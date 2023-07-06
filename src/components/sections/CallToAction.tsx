@@ -1,6 +1,9 @@
 const CallToAction = () => {
   return (
-    <div className="relative isolate mt-32 px-6 py-32 sm:mt-56 sm:py-40 lg:px-8">
+    <div
+      className="relative isolate mt-32 px-6 py-32 sm:mt-56 sm:py-40 lg:px-8"
+      id="contact"
+    >
       <svg
         className="absolute inset-0 -z-10 h-full w-full stroke-white/10 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
         aria-hidden="true"
