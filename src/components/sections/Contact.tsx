@@ -23,7 +23,7 @@ const Contact = () => {
       </div>
 
       <div className="mx-auto max-w-2xl text-center">
-        <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl flex justify-center items-center space-x-2">
+        <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl flex justify-center items-center space-x-4">
           <span>La oss ta en prat</span>
           <span className="animate-wiggle transition">👋🏼</span>
         </h2>
