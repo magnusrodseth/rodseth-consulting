@@ -1,5 +1,4 @@
 import { MailIcon } from "lucide-react";
-import GridBackground from "../common/GridBackground";
 
 const Contact = () => {
   return (
@@ -7,7 +6,6 @@ const Contact = () => {
       className="relative isolate mt-32 px-6 py-32 sm:mt-56 sm:py-40 lg:px-8"
       id="contact"
     >
-      <GridBackground />
 
       <div
         className="absolute inset-x-0 top-10 -z-10 flex transform-gpu justify-center overflow-hidden blur-3xl"
